@@ -120,7 +120,7 @@ async function getCignalsMessageFromLimeMessage(limeMessage) {
         "message": {
             "type": type, // user or bot (or app)
             "senderId": sessionId, // name or identity
-            "timestamp": new Date().toISOString(),
+            "timestamp": limeMessage.metadata["#envelope.storageDate"] || new Date().toISOString(),
             "message": message, // content if text/plain or type
             "handled": true, // true
             "intent": intent, // block name
